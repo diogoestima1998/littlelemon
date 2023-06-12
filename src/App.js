@@ -6,7 +6,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>
-          This is my world. yup i dont give a FFFFFF
+          This is my world. yup i dont give a FFFFFF. BUT I DONT CARE.
         </h1>
       </header>
     </div>
