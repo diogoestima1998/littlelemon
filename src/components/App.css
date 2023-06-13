@@ -1,0 +1,343 @@
+/* HERO SECTION */
+.container-hero{
+  background-color:#495E57 ;
+  
+}
+
+.container-wrapper-hero {
+  background-color: #495E57;
+}
+
+.row-hero{
+  width: 75%; /* Adjust the width as desired */
+  margin: 0 auto; /* Center the sections horizontally */
+  
+}
+
+.row-hero h1{
+  color: #F4CE14;
+  font-family: 'Markazi Text';
+}
+
+.imageHero{
+  width: 358px;
+  height: 383px;
+  display: flex;
+  border-radius: 15px;
+  text-align: right;
+  position: absolute;
+  margin-top: 30px;
+}
+
+/* Media query for smartphones */
+@media (max-width: 990px) {
+  .imageHero{
+    position: relative;
+    margin-bottom: 20px;
+    z-index: 10;
+  }
+}
+
+h1 {
+  font-family: "Markazi Text", serif;
+  font-size: 60px;
+  font-weight: 700;
+  color: #f4ce14;
+  padding-top: 0.5em;
+}
+
+h2 {
+  font-family: "Markazi Text", serif;
+  font-size: 30px;
+  color: #fff;
+
+}
+
+h3 {
+  font-family: "Markazi Text", serif;
+  font-size: 50px;
+  color: #000;
+
+  font-weight: bold;
+  margin-top: 7rem;
+}
+
+h4 {
+  font-family: "Markazi Text", serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: #000;
+}
+
+h5 {
+  font-family: "Karla", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+.container-hero p {
+  font-family: "Karla", sans-serif;
+  font-size: 20px;
+  color: #fff;
+  width: 350px;
+}
+
+.yellowBtn{
+  background-color: #f4ce14;
+  color: #000;
+  font-family: "Karla", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  width: 12em;
+  height: 3em;
+  margin: 1em;
+  border-radius: 2em;
+  border: none;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.yellowBtn:hover{
+  background: #495E57;
+  color: white;
+}
+
+.align-right {
+  float: right;
+}
+/* END HERO SECTION */
+
+/* HIGHLIGHTS */
+.marginTop{
+  margin-top: 7rem;
+}
+#button {
+  background-color: #f4ce14;
+  color: #000;
+  font-family: "Karla", sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  width: 12em;
+  height: 3em;
+  margin: 1em;
+  border-radius: 2em;
+  border: none;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+#button:hover {
+  cursor: pointer;
+}
+
+.specials {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  margin-top: 4em;
+}
+
+.specials-head {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: auto;
+}
+
+@media (max-width: 778px) {
+  .marginTop{
+    margin-top: 0rem;
+  }
+  .specials {
+    margin-top: 0em;
+  }
+}
+
+.card-img-top {
+  width: 95%;
+  border-top-left-radius: 10%;
+  border-top-right-radius: 10%;
+  margin-bottom: -0.2em;
+  box-shadow: 5px 10px 20px #ccc;
+  margin-top: 8em;
+}
+
+.card {
+  margin-top: -4em;
+  margin-left: 1em;
+  margin-right: 1em;
+
+  border: none;
+  background-color: transparent;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 3em;
+  margin-top: 1em;
+
+}
+
+.card-body {
+  font-family: "Karla", sans-serif;
+  background-color: #f2efef;
+  margin-right: 1em;
+  padding: 1em;
+  line-height: 1.8em;
+  height: 250px;
+  box-shadow: 5px 10px 20px #ccc;
+  
+}
+
+@media (min-width: 200px) {
+  .card-body {
+    height: 300px;
+  }
+}
+
+.card-title {
+  font-family: "Markazi Text", serif;
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.btn.btn-primary {
+  font-family: "Karla", sans-serif;
+  font-weight: 900;
+  font-size: 18px;
+  border: none;
+}
+
+.title {
+  width: 30%;
+  height: auto;
+  margin-right: 8em;
+}
+
+.title-button {
+  width: 50%;
+  height: auto;
+  margin-top: 10.5em;
+  margin-left: 15em;
+}
+/* END HIGHLIGHTS */
+
+/* TESTIMONIALS START */
+.testimonials {
+ display:flex;
+ justify-content: center;
+ flex-wrap: wrap;
+ width:100%;
+ height:auto;
+ background-color: #495e57;
+ text-align: center;
+ padding-top: 1em;
+}
+
+.testimonial-header {
+  font-family: "Markazi Text", serif;
+  font-size: 60px;
+  font-weight: 700;
+  width: 100%;
+  color: #f4ce14;
+}
+
+.review-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: auto;
+  align-items: center;
+}
+
+.review {
+  width: 250px;
+  height: 250px;
+  background-color: #fff;
+  margin: 2em;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+
+.review p {
+  font-family: "Karla", sans-serif;
+}
+
+
+@media (max-width: 1050px) {
+  .review p {
+    margin: 1em;
+  }
+}
+
+.profile-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+#profile {
+  width: 30%;
+  border-radius: 50%;
+  margin: 1em;
+  box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center!important;
+  align-items: center;
+}
+
+
+#rating {
+  width: 50%;
+  display: block;
+  margin: 10px auto;
+}
+
+.review h2 {
+  font-family: "Markazi Text", serif;
+  font-size: 25px;
+  color: #000;
+  text-align: center;
+  margin: 0.1em;
+}
+/* TESTIMONIALS END */
+
+/* ABOUT START */
+
+.image-wrap{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-about{
+  width: 440px;
+  margin-top: 5rem;
+}
+
+.container-footer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #495E57;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.container-wrapper-footer {
+  background-color: #495E57;
+}
+
+.link-footer > a{
+  color:white;
+}
+
+.logoWhite{
+  margin-right: 40rem;
+}
