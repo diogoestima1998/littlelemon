@@ -88,6 +88,7 @@ background-color: #574c4c;
 
 .nav-elements.active {
     width: 270px;
+    z-index: 1000;
 }
 
 .nav-elements.active > ul > li {

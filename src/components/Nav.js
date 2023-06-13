@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import {ReactComponent as Hamburger} from '../images/Hamburger.svg'
 import { ReactComponent as Logo } from '../images/Logo.svg'
 import './Nav.css'
@@ -23,22 +23,22 @@ const Navbar = () => {
         <div className={`nav-elements  ${showNavbar && 'active'}`}>
           <ul>
             <li>
-              <NavLink to="/">Home</NavLink>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <NavLink to="/about">About</NavLink>
+              <Link to="/about">About</Link>
             </li>
             <li>
-              <NavLink to="/menu">Menu</NavLink>
+              <Link to="/menu">Menu</Link>
             </li>
             <li>
-              <NavLink to="/reservations">Reservations</NavLink>
+              <Link to="/booking">Reservations</Link>
             </li>
             <li>
-              <NavLink to="/order">Order Online</NavLink>
+              <Link to="/order">Order Online</Link>
             </li>
             <li>
-              <NavLink to="/login">Login</NavLink>
+              <Link to="/login">Login</Link>
             </li>
           </ul>
         </div>
