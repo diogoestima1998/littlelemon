@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css'
-import Food from "../images/food.jpg"
+import './App.css';
+import Food from "../images/food.jpg";
 
 const Hero = () => (
     <header className='container-wrapper-hero'>

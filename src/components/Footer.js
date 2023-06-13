@@ -1,17 +1,18 @@
 import React from 'react'
 import LogoWhite from '../images/LogoWhite.png'
-
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 
 function Footer() {
   return (
   
     <div className='container-wrapper-footer'>
-      <div className='container container-footer '>
-        <div className='row'>
-          <div className='col-lg-3'>
+      <div className='container container-footer'>
+        <div className='row row-footer'>
+          <div className='col-lg-3 col-sm-6'>
               <img className="logoWhite" src={LogoWhite} alt="" />
           </div>
-          <div className='col-lg-3'>
+          <div className='col-lg-3 col-sm-6'>
               <h5>Doormat Navigation</h5>
               <div className='link-footer'>
                 <a href="">Home</a><br/>

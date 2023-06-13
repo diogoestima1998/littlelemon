@@ -62,6 +62,16 @@ h3 {
   margin-top: 7rem;
 }
 
+@media (max-width: 778px) {
+  .center-head{
+    text-align: center;
+  }
+  h3 {
+    margin-top: 2rem;
+  }
+}
+
+
 h4 {
   font-family: "Markazi Text", serif;
   font-size: 35px;
@@ -151,7 +161,11 @@ h5 {
   .specials {
     margin-top: 0em;
   }
+  .specials-head {
+    display: inline;
+  }
 }
+
 
 .card-img-top {
   width: 95%;
@@ -320,6 +334,7 @@ h5 {
   margin-top: 5rem;
 }
 
+/* FOOTER START */
 .container-footer{
   width: 100%;
   display: flex;
@@ -328,10 +343,12 @@ h5 {
   background-color: #495E57;
   padding-top: 3rem;
   padding-bottom: 5rem;
+
 }
 
 .container-wrapper-footer {
   background-color: #495E57;
+  flex-wrap: wrap;
 }
 
 .link-footer > a{
@@ -339,5 +356,18 @@ h5 {
 }
 
 .logoWhite{
-  margin-right: 40rem;
+  margin-right: 2rem;
+}
+
+@media (max-width: 990px) {
+  .container-footer {
+    padding-left: 3rem;
+    margin-top: 3rem;
+  }
+  .logoWhite{
+    margin-right: 0rem;
+  }
+  h5{
+    margin-top: 3rem;
+  }
 }

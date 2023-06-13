@@ -11,8 +11,8 @@ function Highlights() {
     <section>
 
         <div className="specials" id="menu">
-          <div className="specials-head">
-            <h3>This Week Specials!</h3>
+          <div className="specials-head center-head">
+            <h3>Week Specials!</h3>
             <button className="yellowBtn marginTop">Online Menu</button>
         </div>
       </div>
