@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from './Nav'
 import BookingForm from './BookingForm'
 import HeroForm from './HeroForm'
+import Footer from './Footer'
 
 function BookingPage() {
   return (
@@ -9,6 +10,7 @@ function BookingPage() {
         <Nav/>
         <HeroForm/>
         <BookingForm/>
+        <Footer/>
     </div>
   )
 }
