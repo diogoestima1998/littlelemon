@@ -1,48 +1,46 @@
-import React, { useState, useReducer } from 'react';
 
-// Define the reducer function
+import { useNavigate } from 'react-router-dom';
+import { fetchAPI, submitAPI } from './API'; // Replace './api' with the correct path to the API file
+import React, { useState, useReducer, useEffect } from 'react';
+
+
 const reducer = (state, action) => {
   switch (action.type) {
     case 'UPDATE_TIMES':
-      // Define your logic to update the available times based on the selected date
       const selectedDate = new Date(action.date);
-      const dayOfWeek = selectedDate.getDay(); // 0: Sunday, 1: Monday, ..., 6: Saturday
-
-      // Set the available times based on the day of the week
-      let updatedTimes = [];
-      if (dayOfWeek >= 1 && dayOfWeek <= 5) {
-        updatedTimes = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-      } else if (dayOfWeek === 6) { // Saturday
-        updatedTimes = ['18:00', '19:00', '20:00', '21:00', '22:00'];
-      } else { // Sunday
-        updatedTimes = ['19:00', '20:00', '21:00'];
-      }
-
+      const updatedTimes = fetchAPI(selectedDate);
       return updatedTimes;
     default:
       return state;
   }
 };
 
-const BookingForm = ({ availableTimes, setAvailableTimes }) => {
+const BookingForm = () => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('17:00');
   const [guests, setGuests] = useState('1');
   const [occasion, setOccasion] = useState('Birthday');
 
-  // Replace useState with useReducer for availableTimes
-  const [timesState, dispatchTimes] = useReducer(reducer, availableTimes);
+  const initialAvailableTimes = fetchAPI(new Date());
+
+  const [availableTimes, dispatchTimes] = useReducer(reducer, initialAvailableTimes);
+
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Here you can perform further actions, such as sending the form data to an API
+    const formData = { date, time, guests, occasion };
+    const isSubmitted = submitAPI(formData);
+    if (isSubmitted) {
+      navigate('/confirmation');
+    } else {
+      // Handle submission error
+    }
   };
 
   const handleDateChange = (event) => {
     const selectedDate = event.target.value;
     setDate(selectedDate);
-
-    // Dispatch the state change to update the available times based on the selected date
     dispatchTimes({ type: 'UPDATE_TIMES', date: selectedDate });
   };
 
@@ -54,7 +52,7 @@ const BookingForm = ({ availableTimes, setAvailableTimes }) => {
 
         <label htmlFor="res-time">Choose time</label>
         <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)}>
-          {timesState.map((availableTime) => (
+          {availableTimes.map((availableTime) => (
             <option key={availableTime}>{availableTime}</option>
           ))}
         </select>
@@ -83,3 +81,4 @@ const BookingForm = ({ availableTimes, setAvailableTimes }) => {
 };
 
 export default BookingForm;
+

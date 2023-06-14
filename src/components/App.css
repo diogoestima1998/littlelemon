@@ -423,3 +423,13 @@ h5 {
 }
 
 /* END BOOKING FORM*/
+
+/* ORDER SUCCESS START */
+
+.orderSuccess{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 7rem;
+}
