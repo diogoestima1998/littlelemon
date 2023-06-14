@@ -1,7 +1,7 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-![Description of the image](images/little-lemon.png)
+![Description of the image](./src/images/little-lemon.png)
 
 ## Available Scripts
 
