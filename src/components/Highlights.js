@@ -18,7 +18,7 @@ function Highlights() {
       </div>
         <div className='cards'>
           <Card style={{ width: "18rem" }}>
-          <Card.Img variant="top" src={salad} />
+          <Card.Img variant="top" src={salad} className='card-img'/>
           <Card.Body>
             <Card.Title>Greek Salad</Card.Title>
             <Card.Text>
@@ -32,7 +32,7 @@ function Highlights() {
           </Card>
 
           <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={bruchetta} />
+            <Card.Img variant="top" src={bruchetta} className='card-img'/>
             <Card.Body>
               <Card.Title>Bruschetta</Card.Title>
               <Card.Text>
@@ -45,7 +45,7 @@ function Highlights() {
           </Card>
 
           <Card style={{ width: "18rem" }}>
-            <Card.Img variant="top" src={dessert} />
+            <Card.Img variant="top" src={dessert} className='card-img'/>
             <Card.Body>
               <Card.Title>Lemon Cake</Card.Title>
               <Card.Text>
