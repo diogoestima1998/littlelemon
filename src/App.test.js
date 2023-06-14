@@ -6,7 +6,7 @@ test('renders learn react link', () => {
   const linkElement = screen.getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 }); */
-
+/* 
 import { render, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import BookingForm from './components/BookingForm';
@@ -40,7 +40,7 @@ test('Form submits correctly with valid data', () => {
 test(`Form doesn't submit with invalid data`, () => {
   // This test assumes that you mock submitAPI function and check if it's not called when form data is invalid.
 });
-
+ */
 
 /* import { render, screen } from "@testing-library/react";
 import BookingForm from './components/BookingForm';

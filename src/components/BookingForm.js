@@ -85,7 +85,7 @@ const BookingForm = () => {
           <option>Anniversary</option>
         </select>
 
-        <button type="button" onClick={handleSubmission} disabled={!isFormValid}>
+        <button className="yellowBtn" type="button" onClick={handleSubmission} disabled={!isFormValid}>
           Make Your reservation
         </button>
       </form>

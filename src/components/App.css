@@ -112,6 +112,11 @@ h5 {
   color: white;
 }
 
+.yellowBtn:disabled {
+  background-color: gray;
+  color: #fff;
+}
+
 .align-right {
   float: right;
 }
