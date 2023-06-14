@@ -2,6 +2,8 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './App.css';
 import Food from "../images/food.jpg";
+import ButtonHero from './ButtonHero'
+
 
 const Hero = () => (
     <header className='container-wrapper-hero'>
@@ -11,7 +13,8 @@ const Hero = () => (
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
             <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
-            <button className="yellowBtn" type="submit">Reserve a table</button>
+
+            <ButtonHero/>
           </div>
           <div className='col-lg-6'>
             <img src={Food} alt="food" className='imageHero'/>

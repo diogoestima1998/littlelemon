@@ -26,10 +26,10 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/about">About</Link>
+              <a href="#about">About</a>
             </li>
             <li>
-              <Link to="/menu">Menu</Link>
+              <a href="#menu">Menu</a>
             </li>
             <li>
               <Link to="/booking">Reservations</Link>

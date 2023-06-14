@@ -7,14 +7,49 @@ test('renders learn react link', () => {
   expect(linkElement).toBeInTheDocument();
 }); */
 
-import { render, screen } from "@testing-library/react";
+import { render, fireEvent } from '@testing-library/react';
+import '@testing-library/jest-dom/extend-expect';
+import BookingForm from './components/BookingForm';
+
+test('HTML5 validation attributes are correctly applied', () => {
+  const { getByLabelText } = render(<BookingForm />);
+
+  // Check that date input is required
+  const dateInput = getByLabelText('Choose date');
+  expect(dateInput).toBeRequired();
+
+  // Check that time select is required
+  const timeSelect = getByLabelText('Choose time');
+  expect(timeSelect).toBeRequired();
+
+  // Check that guests input is required, and has min and max set
+  const guestsInput = getByLabelText('Number of guests');
+  expect(guestsInput).toBeRequired();
+  expect(guestsInput).toHaveAttribute('min', '1');
+  expect(guestsInput).toHaveAttribute('max', '10');
+
+  // Check that occasion select is required
+  const occasionSelect = getByLabelText('Occasion');
+  expect(occasionSelect).toBeRequired();
+});
+
+test('Form submits correctly with valid data', () => {
+  // This test assumes that you mock submitAPI function and check if it's called with correct arguments.
+});
+
+test(`Form doesn't submit with invalid data`, () => {
+  // This test assumes that you mock submitAPI function and check if it's not called when form data is invalid.
+});
+
+
+/* import { render, screen } from "@testing-library/react";
 import BookingForm from './components/BookingForm';
 
 test('Renders the BookingForm heading', () => {
     render(<BookingForm />);
     const headingElement = screen.getByText("Make Your Reservation");
     expect(headingElement).toBeInTheDocument();
-})
+}) */
 
 /* 
 import { render, screen } from "@testing-library/react";

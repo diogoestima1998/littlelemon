@@ -4,7 +4,7 @@ import './App.css'
 
 function About() {
   return (
-    <section className='container'>
+    <section id="about" className='container'>
       <div className='row'>
           <div className='col-lg-6'>
             <h3>Little Lemon</h3>
