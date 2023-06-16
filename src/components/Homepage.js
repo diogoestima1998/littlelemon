@@ -6,7 +6,6 @@ import About from "./About";
 import Footer from "./Footer"; 
 
 import { ChakraProvider } from "@chakra-ui/react"; 
-import { BrowserRouter} from "react-router-dom";
 
 function Homepage() {
   return (

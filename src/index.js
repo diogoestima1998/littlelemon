@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import Homepage from './components/Homepage';
 import BookingPage from './components/BookingPage';
 import reportWebVitals from './reportWebVitals';

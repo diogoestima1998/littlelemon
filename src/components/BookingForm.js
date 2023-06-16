@@ -1,7 +1,8 @@
 import { useNavigate } from 'react-router-dom';
 import { fetchAPI, submitAPI } from './API';
 import React, { useState, useReducer, useEffect } from 'react';
-
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -14,20 +15,40 @@ const reducer = (state, action) => {
   }
 };
 
+/* FORM ERROR MESSAGES VALIDATION  */
 const NameErrorMessage = () => {
   return (
   <p className="FieldError">Name should have at least 3 characters</p>
   );
 };
 
+const EmailErrorMessage = () => {
+  return (
+  <p className="FieldError">Insert a valid email</p>
+  );
+};
+
+const PhoneErrorMessage = () => {
+  return (
+  <p className="FieldError">Insert a country and phone number</p>
+  );
+};
+
+const GuestErrorMessage = () => {
+  return (
+  <p className="FieldError">Number of guests must be between 1 - 10</p>
+  );
+};
+
+
 
 const BookingForm = () => {
   const [name, setName] = useState({ value: '', isTouched: false });
-  const [email, setEmail] = useState('');
-  const [phoneNumber, setPhoneNumber] = useState('');
+  const [email, setEmail] = useState({ value: '', isTouched: false });
+  const [phoneNumber, setPhoneNumber] = useState({ value: '', isTouched: false });
   const [date, setDate] = useState('');
   const [time, setTime] = useState('17:00');
-  const [guests, setGuests] = useState('1');
+  const [guests, setGuests] = useState({ value: '1', isTouched: false });
   const [occasion, setOccasion] = useState('Birthday');
 
   // Add state for field validity
@@ -43,33 +64,33 @@ const BookingForm = () => {
   const validateName = (name) => {
     return name.value.length >= 3;
   };
-
   // Function to validate email (using a simple regular expression)
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    return emailRegex.test(email.value);
   };
   // Function to validate phone number (using a simple regular expression)
   const validatePhoneNumber = (phoneNumber) => {
-    const phoneRegex = /^\d{10}$/;
-    return phoneRegex.test(phoneNumber);
+    return phoneNumber.value && isValidPhoneNumber(phoneNumber.value);
   };
 
   useEffect(() => {
     // Update form validity whenever the fields change
     const dateValid = date !== '';
     const timeValid = time !== '';
-    const guestsValid = guests > 0 && guests <=10;
+    const guestsValid = guests.value > 0 && guests.value <=10;
     const nameValid = validateName(name);
     const emailValid = validateEmail(email);
     const phoneNumberValid = validatePhoneNumber(phoneNumber);
 
-    console.log('dateValid:', dateValid);
-    console.log('timeValid:', timeValid);
-    console.log('guestsValid:', guestsValid);
+    console.log('------------------------------');
     console.log('nameValid:', nameValid);
     console.log('emailValid:', emailValid);
     console.log('phoneNumberValid:', phoneNumberValid);
+    console.log('dateValid:', dateValid);
+    console.log('timeValid:', timeValid);
+    console.log('guestsValid:', guestsValid);
+
 
     setIsFormValid(dateValid && timeValid && guestsValid && nameValid && emailValid && phoneNumberValid);
   }, [date, time, guests, name, email, phoneNumber]);
@@ -77,7 +98,7 @@ const BookingForm = () => {
   const handleSubmission = () => {
     if (!isFormValid) return;
 
-    const formData = { date, time, guests, occasion, name: name.value, email, phoneNumber };
+    const formData = { date, time, guests, occasion, name: name.value, email: email.value, phoneNumber: phoneNumber.value };
 
     // Log formData to the console
     console.log('Submitting the following data to the API:', formData);
@@ -107,7 +128,7 @@ const BookingForm = () => {
             value={name.value}
             onChange={(e) => setName({ value: e.target.value, isTouched: name.isTouched })}
             onBlur={() => { setName({value: name.value, isTouched: true})}}
-            placeholder='Name'
+            placeholder='Enter Name'
             required
           />
           {name.isTouched && name.value.length <3 ? (<NameErrorMessage/>): null}
@@ -118,21 +139,27 @@ const BookingForm = () => {
           <input
             type="email"
             id="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={email.value}
+            onChange={(e) => setEmail({ value: e.target.value, isTouched: email.isTouched })}
+            onBlur={() => { setEmail({value: email.value, isTouched: true})}}
+            placeholder='Enter Email'
             required
           />
+          {email.isTouched && !validateEmail(email) ? (<EmailErrorMessage/>): null}
         </div>
 
         <div className='Field'>
           <label htmlFor="phone">Phone Number</label>
-          <input
+          <PhoneInput
+            placeholder="Enter phone number"
             type="tel"
             id="phone"
-            value={phoneNumber}
-            onChange={(e) => setPhoneNumber(e.target.value)}
+            value={phoneNumber.value}
+            onChange={(phone) => setPhoneNumber({ value: phone, isTouched: phoneNumber.isTouched })}
+            onBlur={() => { setPhoneNumber({value: phoneNumber.value, isTouched: true})}}
             required
           />
+          {phoneNumber.isTouched && !(phoneNumber.value && isValidPhoneNumber(phoneNumber.value)) ? (<PhoneErrorMessage/>): null}
         </div>
 
         <div className='Field'>
@@ -157,10 +184,12 @@ const BookingForm = () => {
             min="1"
             max="10"
             id="guests"
-            value={guests}
-            onChange={(e) => setGuests(e.target.value)}
+            value={guests.value}
+            onChange={(e) => setGuests({ value: e.target.value, isTouched: guests.isTouched })}
+            onBlur={() => { setGuests({value: guests.value, isTouched: true})}}
             required
           />
+          {guests.isTouched && !(guests.value > 0 && guests.value <= 10) ? (<GuestErrorMessage/>): null}
         </div>
 
         <div className='Field'>

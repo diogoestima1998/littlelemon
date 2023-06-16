@@ -4,7 +4,6 @@ import bruchetta from "../images/bruchetta.svg";
 import salad from "../images/greek-salad.jpg";
 import dessert from "../images/lemon-dessert1.jpg";
 import Button from "react-bootstrap/Button";
-import { Center } from '@chakra-ui/react';
 
 function Highlights() {
   return (
