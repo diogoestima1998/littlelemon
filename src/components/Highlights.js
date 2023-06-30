@@ -4,15 +4,22 @@ import bruchetta from "../images/bruchetta.svg";
 import salad from "../images/greek-salad.jpg";
 import dessert from "../images/lemon-dessert1.jpg";
 import Button from "react-bootstrap/Button";
+import { Link, useNavigate } from 'react-router-dom';
 
 function Highlights() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/menu');
+  };
+
   return (
     <section>
 
         <div className="specials" id="menu">
           <div className="specials-head center-head">
             <h3>Week Specials!</h3>
-            <button className="yellowBtn marginTop">Online Menu</button>
+            <button onClick={handleClick} className="yellowBtn marginTop">Online Menu</button>
         </div>
       </div>
         <div className='cards'>

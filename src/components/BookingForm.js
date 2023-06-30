@@ -201,7 +201,7 @@ const BookingForm = () => {
         </div>
 
 
-        <button className="yellowBtn" type="button" onClick={handleSubmission} disabled={!isFormValid}>
+        <button className="yellowBtn paddingBtn" type="button" onClick={handleSubmission} disabled={!isFormValid}>
           Make Your reservation
         </button>
       </form>

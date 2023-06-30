@@ -7,6 +7,7 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import OrderSuccess from './components/OrderSuccess';
+import { Menu } from './components/Menu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -16,7 +17,7 @@ root.render(
         <Route path="/" element={<Homepage/>} />
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/#about" element={<Homepage/>} />
-        <Route path="/menu" element={<Homepage/>} />
+        <Route path="/menu" element={<Menu/>} />
         <Route path="/order" element={<Homepage/>} />
         <Route path="/login" element={<Homepage/>} />
         <Route path="/confirmation" element={<OrderSuccess/>} />

@@ -12,7 +12,7 @@ const Hero = () => (
           <div className='col-lg-6'>
             <h1>Little Lemon</h1>
             <h2>Chicago</h2>
-            <p>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
+            <p className='mainp'>We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.</p>
 
             <ButtonHero/>
           </div>
