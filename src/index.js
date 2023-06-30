@@ -8,6 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import OrderSuccess from './components/OrderSuccess';
 import { Menu } from './components/Menu';
+import Error404 from './components/Error404';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,8 +19,8 @@ root.render(
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/#about" element={<Homepage/>} />
         <Route path="/menu" element={<Menu/>} />
-        <Route path="/order" element={<Homepage/>} />
-        <Route path="/login" element={<Homepage/>} />
+        <Route path="/order" element={<Error404/>} />
+        <Route path="/login" element={<Error404/>} />
         <Route path="/confirmation" element={<OrderSuccess/>} />
       </Routes>
     </BrowserRouter>

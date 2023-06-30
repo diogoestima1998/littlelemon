@@ -121,7 +121,7 @@ const BookingForm = () => {
     <div className='form-Booking'>
       <form className="formBooking" style={{ display: 'grid', maxWidth: '200px', gap: '20px' }} onSubmit={(e) => e.preventDefault()}>
         <div className='Field'>
-          <label htmlFor="name">Name</label>
+          <label htmlFor="name">Name:</label>
           <input
             type="text"
             id="name"
@@ -135,7 +135,7 @@ const BookingForm = () => {
         </div>
 
         <div className='Field'>
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email:</label>
           <input
             type="email"
             id="email"
@@ -149,7 +149,7 @@ const BookingForm = () => {
         </div>
 
         <div className='Field'>
-          <label htmlFor="phone">Phone Number</label>
+          <label htmlFor="phone">Phone Number:</label>
           <PhoneInput
             placeholder="Enter phone number"
             type="tel"
@@ -163,12 +163,12 @@ const BookingForm = () => {
         </div>
 
         <div className='Field'>
-          <label htmlFor="res-date">Choose date</label>
+          <label htmlFor="res-date">Choose date:</label>
           <input type="date" id="res-date" value={date} onChange={handleDateChange} required />
         </div>
         
         <div className='Field'>
-          <label htmlFor="res-time">Choose time &nbsp; </label>
+          <label htmlFor="res-time">Choose time: &nbsp; </label>
           <select id="res-time" value={time} onChange={(e) => setTime(e.target.value)} required>
             {availableTimes.map((availableTime) => (
               <option key={availableTime}>{availableTime}</option>
@@ -177,7 +177,7 @@ const BookingForm = () => {
         </div>
         
         <div className='Field'>
-          <label htmlFor="guests">Number of guests</label>
+          <label htmlFor="guests">Number of guests:</label>
           <input
             type="number"
             placeholder="1"
@@ -193,7 +193,7 @@ const BookingForm = () => {
         </div>
 
         <div className='Field'>
-          <label htmlFor="occasion">Occasion &nbsp; </label>
+          <label htmlFor="occasion">Occasion: &nbsp; </label>
           <select id="occasion" value={occasion} onChange={(e) => setOccasion(e.target.value)} required>
             <option>Birthday</option>
             <option>Anniversary</option>

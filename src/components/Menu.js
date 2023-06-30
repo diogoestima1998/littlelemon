@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Nav'
 import { menucards } from '../constants'
+import Footer from './Footer'
 
 
 export const Menu = () => {
@@ -19,10 +20,12 @@ export const Menu = () => {
                     <div className='card-menu__text'>
                         <h1>{card.title}</h1>
                         <h2>Rate: {card.rate}</h2>
+                        <h2>Price: {card.price}</h2>
                     </div>
                 </div>
             ))}
         </div>
+        <Footer/>
     </div>
   )
 }

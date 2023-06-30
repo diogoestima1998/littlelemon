@@ -28,9 +28,6 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
               <Link to="/menu">Menu</Link>
             </li>
             <li>
